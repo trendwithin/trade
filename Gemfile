@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'puma', '~> 3.2'
 gem 'newrelic_rpm', '~> 3.14', '>= 3.14.0.305'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'bower-rails'
 
 group :development, :test do
   gem 'awesome_print', require: 'ap'
