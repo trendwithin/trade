@@ -1,0 +1,20 @@
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
+
+form {
+  .field {
+    @extend .form-group;
+    input[type='email'], input[type='password'] {
+      @extend .form-control;
+    }
+  }
+  .actions {
+    input {
+      @extend .btn;
+      @extend .btn-default;
+      @extend .btn-lg;
+    }
+    input[name='commit']{
+      @extend .btn-primary;
+    }
+  }
+}
