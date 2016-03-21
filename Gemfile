@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'puma', '~> 3.2'
 
 group :development, :test do
   gem 'byebug'
@@ -17,4 +18,10 @@ end
 group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
+end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
 end
