@@ -10,6 +10,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'puma', '~> 3.2'
+gem 'newrelic_rpm', '~> 3.14', '>= 3.14.0.305'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   gem 'byebug'
