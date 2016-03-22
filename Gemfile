@@ -13,6 +13,7 @@ gem 'puma', '~> 3.2'
 gem 'newrelic_rpm', '~> 3.14', '>= 3.14.0.305'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'bower-rails'
+gem 'devise', '~> 3.5', '>= 3.5.6'
 
 group :development, :test do
   gem 'awesome_print', require: 'ap'
