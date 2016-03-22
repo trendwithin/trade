@@ -6,4 +6,8 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'should get dummy_page (This page is only for testing)' do
+    get :dummy_page
+    assert_response :success
+  end
 end
