@@ -17,7 +17,7 @@ feature "Users Sign Up to Site" do
       assert_equal User.find_by(email: "test_user_confirmable@example.com").confirmation_token, token
       visit "users/confirmation?confirmation_token=#{token}"
       page.must_have_text "Your email address has been successfully confirmed."
-      fill_in 'Email', with: 'test_user_confirmable@example.com'
+      fill_in 'user_login', with: 'test_user_confirmable@example.com'
       fill_in 'Password', with: 'password'
       click_button 'Log in'
       page.must_have_text "Signed in successfully."
@@ -35,7 +35,7 @@ feature "Users Sign Up to Site" do
     click_button 'Resend confirmation instructions'
     new_token = User.find_by(email: 'test_reconfirm@example.com').confirmation_token
     visit "/users/confirmation?confirmation_token=#{new_token}"
-    fill_in 'Email', with: 'test_reconfirm@example.com'
+    fill_in 'user_login', with: 'test_reconfirm@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
     page.must_have_text "Signed in successfully."
