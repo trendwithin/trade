@@ -10,7 +10,7 @@ feature "User Sign In" do
   scenario 'Valid User with Valid Credentials Logs In' do
     visit root_path
     click_link 'Log in'
-    fill_in 'Email', with: @new_user.email
+    fill_in 'user_login', with: @new_user.email
     fill_in 'Password', with: 'password'
     click_button 'Log in'
     page.must_have_text 'Signed in successfully.'
@@ -20,8 +20,7 @@ feature "User Sign In" do
   scenario 'Valid User Enters Empty Form' do
     visit new_user_session_path
     click_button 'Log in'
-    save_and_open_page
-    page.must_have_text "Invalid email or password."
+    page.must_have_text "Invalid login or password."
     page.wont_have_text "This is a dummy page to test against."
   end
 end
