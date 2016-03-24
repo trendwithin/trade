@@ -23,4 +23,13 @@ feature "User Sign In" do
     page.must_have_text "Invalid login or password."
     page.wont_have_text "This is a dummy page to test against."
   end
+
+  scenario 'Navbar Links Modify- Log out and Profile Added' do
+    visit new_user_session_path
+    logged_in_as @new_user
+    page.must_have_link 'Log out'
+    page.must_have_link 'Profile'
+    page.wont_have_link 'Sign up'
+    page.wont_have_link 'Sign up'
+  end
 end
