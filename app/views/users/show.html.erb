@@ -8,19 +8,19 @@
         <span id="public">This information will show on public profile</span>
         <table>
           <tr>
-            <td>First Name: Something</td>
+            <td>First Name: <%= current_user.first_name %></td>
           </tr>
           <tr>
-            <td>Last Name: Something</td>
+            <td>Last Name: <%= current_user.last_name %></td>
           </tr>
           <tr>
-            <td>Location: Something</td>
+            <td>Location: <%= current_user.location %></td>
           </tr>
           <tr>
-            <td>Website: Something</td>
+            <td>Website: <%= current_user.website%></td>
           </tr>
           <tr>
-            <td>Gravatar: Something</td>
+            <td>Gravatar: Coming Soon</td>
           </tr>
         </table>
       </section>
@@ -29,6 +29,7 @@
     <div class="col-md-6">
       <article id="bio" class="well">
         <h3>About Yourself:</h3>
+        <%= current_user.bio %>
     </div>
   </div>
   <div class="row">
