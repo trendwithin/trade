@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :username, uniqueness: { case_sensitive: false }
+  validates :username, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
   # Devise Login Username or Email
   def self.find_for_database_authentication(warden_conditions)
        conditions = warden_conditions.dup
