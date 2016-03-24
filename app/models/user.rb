@@ -3,10 +3,18 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
+  validates :username, length: { maximum: 20 }
+  validates :email, uniqueness: true, length: { maximum: 256 }
+  validates :first_name, length: { maximum: 20 }
+  validates :last_name, length: { maximum: 20 }
+  validates :website, length: { maximum: 50 }
+  validates :location, length: { maximum: 50 }
+  validates :bio, length: { maximum: 1000 }
+
   # Devise Login Username or Email
   def self.find_for_database_authentication(warden_conditions)
        conditions = warden_conditions.dup
