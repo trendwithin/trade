@@ -17,4 +17,13 @@ class ActiveSupport::TestCase
   fixtures :all
   Capybara.javascript_driver = :poltergeist
   # Add more helper methods to be used by all tests here...
+
+  def logged_in_as user
+    email = user.email
+    password = 'password'
+    visit new_user_session_path
+    fill_in 'user_login', with: email
+    fill_in 'Password', with: password
+    click_button 'Log in'
+  end
 end

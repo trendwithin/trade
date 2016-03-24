@@ -1,0 +1,53 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Bio -->
+      <section id='public_bio' class="well">
+        <h3>Bio:</h3>
+        <span id="public">This information will show on public profile</span>
+        <table>
+          <tr>
+            <td>First Name: Something</td>
+          </tr>
+          <tr>
+            <td>Last Name: Something</td>
+          </tr>
+          <tr>
+            <td>Location: Something</td>
+          </tr>
+          <tr>
+            <td>Website: Something</td>
+          </tr>
+          <tr>
+            <td>Gravatar: Something</td>
+          </tr>
+        </table>
+      </section>
+      <!-- End Bio -->
+    </div>
+    <div class="col-md-6">
+      <article id="bio" class="well">
+        <h3>About Yourself:</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-0">
+      <section id="acct_overview" class="well">
+        <h3 class='center'>Account Overview</h3>
+        <table class="table-responsive">
+          <tr>
+            <td>Username: <%= current_user.username %></td>
+          </tr>
+          <tr>
+            <td>Password: ****</td>
+          </tr>
+          <tr>
+            <td>Email: me@you.com</td>
+          </tr>
+        </table>
+        <%= link_to 'Edit', edit_user_registration_path, class: 'btn btn-xs btn-primary' %>
+      </section>
+    </div>
+  </div>
+</div>
