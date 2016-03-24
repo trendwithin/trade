@@ -14,6 +14,7 @@ gem 'newrelic_rpm', '~> 3.14', '>= 3.14.0.305'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'bower-rails'
 gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'pundit', '~> 1.1'
 
 group :development, :test do
   gem 'awesome_print', require: 'ap'
