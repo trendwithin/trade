@@ -62,4 +62,23 @@ feature "Users Sign Up to Site" do
      visit "users/confirmation?confirmation_token=#{token}"
      page.must_have_text "Email needs to be confirmed within 3 days, please request a new one"
   end
+
+  scenario 'UHP: User Enters Data Exceeding Accepted Lengths' do
+    visit new_user_registration_path
+    email = 'A' * 256 + "@example.com"
+    password = 'A' * 81
+    fill_in 'Email', with: email
+    fill_in 'Password', with: password
+    click_button 'Sign up'
+    page.must_have_text '3 errors prohibited this user from being saved:'
+  end
+
+  scenario 'UHP: User enters an existing email' do
+    visit new_user_registration_path
+    fill_in 'Email', with: users(:yml_user).email
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_button 'Sign up'
+    page.must_have_text 'Email has already been taken'
+  end
 end

@@ -53,4 +53,13 @@ feature "User Profile Page" do
     page.must_have_text 'South Central'
     page.must_have_text 'theshield.net'
   end
+
+  scenario 'User Attempts to Change Email to an Existing One' do
+    logged_in_as @new_user
+    visit edit_user_registration_path
+    fill_in 'user_email', with: users(:yml_user).email
+    fill_in 'user_current_password', with: 'password'
+    click_button 'Update'
+    page.must_have_text 'Email has already been taken'
+  end
 end
