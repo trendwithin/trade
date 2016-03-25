@@ -1,10 +1,12 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized
 
   # GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    authorize @blogs
   end
 
   # GET /blogs/1
@@ -15,6 +17,7 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    authorize @blog
   end
 
   # GET /blogs/1/edit
@@ -25,6 +28,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = current_user.blogs.build(blog_params)
+    authorize @blog
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -64,6 +68,7 @@ class BlogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])
+      authorize @blog
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
