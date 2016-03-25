@@ -3,23 +3,30 @@
 <!-- 8 Col For Post -->
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <ul class="post list-unstyled">
-        <li>
-          <h1><a href="#">Blog Post Title</a></h1>
-          <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni culpa non ipsum aliquam officia pariatur nulla rem accusamus, veritatis provident porro. Laboriosam maxime molestias iste impedit totam accusantium tempore quo.</p>
-            <p>Repudiandae architecto cupiditate iste id ab autem numquam maxime magni blanditiis, dolores, nam nisi soluta ea saepe commodi consequuntur quaerat sapiente nostrum temporibus. Distinctio architecto cum consectetur, enim natus. Aperiam!</p>
-          </div>
-        </li>
-      </ul>
-      <ul class="meta list-inline">
-        <li><a href="">Read More...</a></li>
-        <li><a href="">Tags: Momentum, Entry</a></li>
-        <li><a href="">Comments: 2</a></li>
-        <li><a href="">Upvotes</a></li>
-      </ul>
-    </div>
+    <div class="col-md-8"> <!-- Blog -->
+      <% @blogs.each do |blog| %>
+        <ul class="post list-unstyled">
+          <li>
+            <h3><%= link_to blog.title, blog_path(blog) %></h3>
+            <div>
+              <%= blog.body %>
+            </div>
+          </li>
+        </ul>
+        <span class='tags'>
+          <% if current_user.admin? %>
+          <button class="btn btn-sm btn-success"><%= link_to 'Edit', edit_blog_path(blog) %></button><i class="fa fa-pencil-square-o"></i>
+          <button class="btn btn-sm btn-danger">Destroy</button> <i class="fa fa-times"></i>
+          <% end %>
+        </span> <!-- FA -->
+        <ul class="meta list-inline">
+          <li><a href="">Read More...</a></li>
+          <li><a href="">Tags: Momentum, Entry</a></li>
+          <li><a href="">Comments: 2</a></li>
+          <li><a href="">Upvotes</a></li>
+        </ul>
+      <% end %>
+    </div> <!-- End Blog -->
     <aside class="col-md-offset-1 col-md-3">
       <section class = 'viewed'>
         <h4><i class="fa fa-book"></i> Most Viewed Posts:</h4>

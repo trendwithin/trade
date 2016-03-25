@@ -54,8 +54,10 @@ class BlogsControllerTest < ActionController::TestCase
   end
 
   test 'Blog Post Not Authorized' do
-    assert_raises (NoMethodError) { post :create, blog: { body: blog.body, click_count: blog.click_count, title: blog.title } }
-    refute_equal 'Blog was successfully created.', flash[:notice]
+    refute_difference('Blog.count') do
+      post :create, blog: { body: blog.body, click_count: blog.click_count, title: blog.title }
+      refute_equal 'Blog was successfully created.', flash[:notice]
+    end
   end
 
   def test_show

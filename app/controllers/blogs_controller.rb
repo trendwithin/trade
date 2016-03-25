@@ -1,11 +1,18 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: :public_blog
   after_action :verify_authorized
+  skip_after_action :verify_authorized, only: :public_blog
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    # @blogs = Blog.all
+    if current_user.registered?
+      @blogs = Blog.posted
+    else
+      @blogs = Blog.all
+    end
     authorize @blogs
   end
 
@@ -62,6 +69,10 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def public_blog
+    @blogs = Blog.posted.public_blog
   end
 
   private
