@@ -1,0 +1,15 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+first_blog_post:
+  title: This is the first blog post.
+  body: This is the first blog body.
+  click_count: 0
+  user: admin
+  created_at: <%= 1.day.ago %>
+
+second_blog_post:
+  title: This is the second blog post.
+  body: This is the second blog body.
+  click_count: 1
+  user: admin

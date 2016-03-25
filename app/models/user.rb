@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   validates :location, length: { maximum: 50 }
   validates :bio, length: { maximum: 1000 }
 
+  has_many :blogs
+
   # Devise Login Username or Email
   def self.find_for_database_authentication(warden_conditions)
        conditions = warden_conditions.dup
