@@ -1,31 +1,50 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Click count</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= blog.click_count %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+<%= render 'shared/navbar' %>
+<!-- Blog -->
+<!-- 8 Col For Post -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <ul class="post list-unstyled">
+        <li>
+          <h1><a href="#">Blog Post Title</a></h1>
+          <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni culpa non ipsum aliquam officia pariatur nulla rem accusamus, veritatis provident porro. Laboriosam maxime molestias iste impedit totam accusantium tempore quo.</p>
+            <p>Repudiandae architecto cupiditate iste id ab autem numquam maxime magni blanditiis, dolores, nam nisi soluta ea saepe commodi consequuntur quaerat sapiente nostrum temporibus. Distinctio architecto cum consectetur, enim natus. Aperiam!</p>
+          </div>
+        </li>
+      </ul>
+      <ul class="meta list-inline">
+        <li><a href="">Read More...</a></li>
+        <li><a href="">Tags: Momentum, Entry</a></li>
+        <li><a href="">Comments: 2</a></li>
+        <li><a href="">Upvotes</a></li>
+      </ul>
+    </div>
+    <aside class="col-md-offset-1 col-md-3">
+      <section class = 'viewed'>
+        <h4><i class="fa fa-book"></i> Most Viewed Posts:</h4>
+        <ul class="list-unstyled">
+          <li><a href="">Post Number One</a></li>
+          <li><a href="">Post Number Two</a></li>
+          <li><a href="">Post Number Three</a></li>
+          <li><a href="">Post Number Four</a></li>
+        </ul>
+      </section>
+      <section class= 'viewed'>
+        <h4><i class="fa fa-book"></i>Most Upvoted Post:</h4>
+        <ul class='list-unstyled'>
+          <li><a href="">Post Number 10</a></li>
+          <li><a href="">Post Number 1</a></li>
+          <li><a href="">Post Number 3</a></li>
+        </ul>
+      </section>
+      <section class='tags'>
+        <h4><i class="fa fa-tags"></i>Popular Tags:</h4>
+        <ul class="list-unstyled">
+          <li><a href="">Momentum</a></li>
+          <li><a href="">Market Breadth</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>

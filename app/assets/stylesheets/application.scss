@@ -14,6 +14,8 @@
  *= require_tree .
  *= require_self
  */
+
+ @import '../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
  html {
    position: relative;
    min-height: 100%;
@@ -102,4 +104,13 @@
 
 #public_bio {
   background-color: #EDB4D0;
+}
+
+/* Blog */
+.viewed .fa-book {
+  font-size: 32px;
+}
+
+.tags .fa-tags {
+  font-size: 32px;
 }
