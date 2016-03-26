@@ -1,0 +1,46 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+first_blog_post:
+  title: This is the first blog post.
+  body: This is the first blog body.
+  click_count: 0
+  user: admin
+  published: 1
+  status: 0
+  created_at: <%= 1.day.ago %>
+
+second_blog_post:
+  title: This is the second blog post.
+  body: This is the second blog body.
+  click_count: 1
+  user: admin
+  published: 1
+  status: 0
+
+<% 4.times do |n| %>
+pub_pub_blog_post_<%= n %>:
+  title: <%= Faker::Beer.name %>
+  body: <%= Faker::Lorem.paragraph(5) %>
+  user: admin
+  published: 1
+  status: 1
+<% end %>
+
+<% 2.times do |n| %>
+published_blog_post_<%= n %>:
+  title: <%= Faker::Beer.name %>
+  body: <%= Faker::Lorem.paragraph(5) %>
+  user: admin
+  published: 1
+  status: 0
+<% end %>
+
+<% 2.times do |n| %>
+unpub_private_blog_post_<%= n %>:
+  title: <%= Faker::Beer.name %>
+  body: <%= Faker::Lorem.paragraph(5) %>
+  user: admin
+  published: 0
+  status: 0
+<% end %>

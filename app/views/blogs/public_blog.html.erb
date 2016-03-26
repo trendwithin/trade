@@ -1,0 +1,21 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 well"> <!-- Blog -->
+      <% @blogs.each do |blog| %>
+        <ul class="post list-unstyled">
+          <li>
+            <h3><%= blog.title %></h3>
+            <div>
+              <%= blog.body %>
+            </div>
+          </li>
+        </ul>
+        <ul class="meta list-inline">
+          <li><a href="">Read More...</a>  <span class="viewed"><i class="fa fa-book"></i></span></li>
+        </ul>
+
+      <% end %>
+    </div> <!-- End Blog -->
+  </div>
+</div>

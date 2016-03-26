@@ -11,7 +11,7 @@ form {
     input {
       @extend .btn;
       @extend .btn-default;
-      @extend .btn-lg;
+      @extend .btn-sm;
     }
     input[name='commit']{
       @extend .btn-primary;

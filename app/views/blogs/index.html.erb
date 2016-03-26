@@ -1,0 +1,58 @@
+<%= render 'shared/navbar' %>
+<!-- Blog -->
+<!-- 8 Col For Post -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8"> <!-- Blog -->
+      <% @blogs.each do |blog| %>
+        <ul class="post list-unstyled" id="<%= dom_id(blog)%>">
+          <li>
+            <h3 class='title'><%= link_to blog.title, blog_path(blog) %></h3>
+            <div>
+              <%= blog.body %>
+            </div>
+          </li>
+        </ul>
+        <span class='tags'>
+          <% if current_user.admin? %>
+          <button class="btn btn-sm btn-success"><%= link_to 'Edit', edit_blog_path(blog) %></button><i class="fa fa-pencil-square-o"></i>
+          <button class="btn btn-sm btn-danger"><%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %></button> <i class="fa fa-times"></i>
+          <% end %>
+        </span> <!-- FA -->
+        <ul class="meta list-inline">
+          <li><%= link_to 'Read More...', blog_path(blog) %></li>
+
+          <li><a href="">Tags: Momentum, Entry</a></li>
+          <li><a href="">Comments: 2</a></li>
+          <li><a href="">Upvotes</a></li>
+        </ul>
+      <% end %>
+    </div> <!-- End Blog -->
+    <aside class="col-md-offset-1 col-md-3">
+      <section class = 'viewed'>
+        <h4><i class="fa fa-book"></i> Most Viewed Posts:</h4>
+        <ul class="list-unstyled">
+          <li><a href="">Post Number One</a></li>
+          <li><a href="">Post Number Two</a></li>
+          <li><a href="">Post Number Three</a></li>
+          <li><a href="">Post Number Four</a></li>
+        </ul>
+      </section>
+      <section class= 'viewed'>
+        <h4><i class="fa fa-book"></i>Most Upvoted Post:</h4>
+        <ul class='list-unstyled'>
+          <li><a href="">Post Number 10</a></li>
+          <li><a href="">Post Number 1</a></li>
+          <li><a href="">Post Number 3</a></li>
+        </ul>
+      </section>
+      <section class='tags'>
+        <h4><i class="fa fa-tags"></i>Popular Tags:</h4>
+        <ul class="list-unstyled">
+          <li><a href="">Momentum</a></li>
+          <li><a href="">Market Breadth</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>

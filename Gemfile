@@ -17,6 +17,7 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'pundit', '~> 1.1'
 
 group :development, :test do
+  gem 'faker', '~> 1.6', '>= 1.6.3'
   gem 'awesome_print', require: 'ap'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem 'byebug'

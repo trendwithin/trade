@@ -13,3 +13,14 @@ yml_user:
 unconfirmed_user:
   email: unconfirmed_user@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+
+admin_user:
+  email: admin@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  confirmed_at: <%= Time.now %>
+  role: admin
+
+shane:
+  email: shane@thesheild.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  confirmed_at: <%= Time.now %>

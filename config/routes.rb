@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blogs
+  get 'blogs/public_blog', path: '/blog'
   get 'users/show', path: '/profile'
 
   devise_for :users
