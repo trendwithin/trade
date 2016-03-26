@@ -23,3 +23,12 @@ feature 'Public Published Post Available to Guest Visitors to Site Root' do
     page.assert_selector('.post', 4)
   end
 end
+
+feature "Blog Index Shows a List of Top 5 Post by Clicks" do
+  scenario 'User Visits Blog Index and Top Post Populate on Sidebar' do
+    logged_in_as users(:shane)
+    visit blogs_path
+    elem = within("ul#most_viewed") { first('li').text }
+    assert_equal blogs(:first_blog_post).title, elem
+  end
+end

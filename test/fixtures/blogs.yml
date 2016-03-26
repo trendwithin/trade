@@ -4,7 +4,7 @@
 first_blog_post:
   title: This is the first blog post.
   body: This is the first blog body.
-  click_count: 0
+  click_count: 10000
   user: admin
   published: 1
   status: 0

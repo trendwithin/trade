@@ -7,4 +7,6 @@ class Blog < ActiveRecord::Base
 
   enum status: { pay_wall_blog: 0, public_blog: 1 }
   enum published: { stashed: 0, posted: 1}
+
+  scope :most_viewed, -> { order("blogs.click_count DESC").limit(5) }
 end
