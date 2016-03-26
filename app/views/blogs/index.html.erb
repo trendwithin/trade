@@ -5,9 +5,9 @@
   <div class="row">
     <div class="col-md-8"> <!-- Blog -->
       <% @blogs.each do |blog| %>
-        <ul class="post list-unstyled">
+        <ul class="post list-unstyled" id="<%= dom_id(blog)%>">
           <li>
-            <h3><%= link_to blog.title, blog_path(blog) %></h3>
+            <h3 class='title'><%= link_to blog.title, blog_path(blog) %></h3>
             <div>
               <%= blog.body %>
             </div>
@@ -20,7 +20,8 @@
           <% end %>
         </span> <!-- FA -->
         <ul class="meta list-inline">
-          <li><a href="">Read More...</a></li>
+          <li><%= link_to 'Read More...', blog_path(blog) %></li>
+          
           <li><a href="">Tags: Momentum, Entry</a></li>
           <li><a href="">Comments: 2</a></li>
           <li><a href="">Upvotes</a></li>
