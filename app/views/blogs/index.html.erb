@@ -16,12 +16,12 @@
         <span class='tags'>
           <% if current_user.admin? %>
           <button class="btn btn-sm btn-success"><%= link_to 'Edit', edit_blog_path(blog) %></button><i class="fa fa-pencil-square-o"></i>
-          <button class="btn btn-sm btn-danger">Destroy</button> <i class="fa fa-times"></i>
+          <button class="btn btn-sm btn-danger"><%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %></button> <i class="fa fa-times"></i>
           <% end %>
         </span> <!-- FA -->
         <ul class="meta list-inline">
           <li><%= link_to 'Read More...', blog_path(blog) %></li>
-          
+
           <li><a href="">Tags: Momentum, Entry</a></li>
           <li><a href="">Comments: 2</a></li>
           <li><a href="">Upvotes</a></li>
