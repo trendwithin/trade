@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
     if current_user.registered?
       @blogs = Blog.posted
     else
-      @blogs = Blog.all
+      @blogs = Blog.all.desc
     end
     authorize @blogs
   end
@@ -19,6 +19,8 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    count = @blog.click_count + 1
+    @blog.update_attributes(click_count: count)
   end
 
   # GET /blogs/new
@@ -84,6 +86,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :click_count)
+      params.require(:blog).permit(:title, :body, (:publishes if current_user.role == 'admin'), (:statuses if current_user.role == 'admin'))
     end
 end

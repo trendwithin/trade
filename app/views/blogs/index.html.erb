@@ -31,11 +31,10 @@
     <aside class="col-md-offset-1 col-md-3">
       <section class = 'viewed'>
         <h4><i class="fa fa-book"></i> Most Viewed Posts:</h4>
-        <ul class="list-unstyled">
-          <li><a href="">Post Number One</a></li>
-          <li><a href="">Post Number Two</a></li>
-          <li><a href="">Post Number Three</a></li>
-          <li><a href="">Post Number Four</a></li>
+        <ul class="list-unstyled" id="most_viewed">
+          <% @blogs.most_viewed.each do |post| %>
+            <li><%= link_to post.title, blog_path(post) %></li>
+          <% end %>
         </ul>
       </section>
       <section class= 'viewed'>

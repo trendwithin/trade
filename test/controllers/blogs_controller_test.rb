@@ -22,7 +22,7 @@ class BlogsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'Registerd User Can View Blog Index Page' do
+  test 'Registered User Can View Blog Index Page' do
     sign_in users(:shane)
     get :index
     assert_response :success
