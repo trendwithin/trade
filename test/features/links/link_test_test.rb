@@ -22,6 +22,14 @@ feature "Admin Link Test" do
     click_link 'Log out'
     page.must_have_text 'Signed out successfully.'
   end
+
+  scenario "Test Blog Pages For Navbar" do
+    logged_in_as users(:admin_user)
+    visit blogs_path
+    page.must_have_link 'Log out'
+    visit blog_path blogs(:first_blog_post)
+    page.must_have_link 'Log out'
+  end
 end
 
 feature 'Registered User Link Test' do

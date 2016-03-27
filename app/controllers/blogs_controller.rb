@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
     if current_user.registered?
       @blogs = Blog.posted
     else
-      @blogs = Blog.all
+      @blogs = Blog.all.desc
     end
     authorize @blogs
   end
@@ -86,6 +86,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, (:publishes if current_user.role == 'admin'), (:statuses if current_user.role == 'admin'))
     end
 end

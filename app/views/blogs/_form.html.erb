@@ -26,6 +26,14 @@
           <%= f.label :body %><br>
           <%= f.text_area :body, cols: '100', rows: '25' %>
         </div>
+        <div class="field well">
+          <%= f.label :public %>
+          <%= f.check_box :statuses, as: :select, collection: Blog.statuses.keys.to_a %>
+        </div>
+        <div class="field well" id="publish_blog">
+          <%= f.label :publish %>
+          <%= f.check_box :publishes, as: :select, collection: Blog.publishes.keys.to_a %>
+        </div>
         <div class="actions">
           <%= f.submit %>
         </div>
