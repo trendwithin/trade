@@ -8,6 +8,22 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-0-offset well">
+    <%= render 'comments/form' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-0-offset well">
+      <% if @blog.comments.empty? %>
+        "Be the first to comment"
+      <% else %>
+        <%= render @blog.comments %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class="center">
   <% if current_user.admin? %>
     <%= link_to 'Edit', edit_blog_path(@blog), class: 'btn btn-sm btn-primary' %> |
