@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Trade Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Trade opened at</th>
+      <th>Symbol</th>
+      <th>Position size</th>
+      <th>Entry price</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>Exit one on</th>
+      <th>Exit one shares</th>
+      <th>Exit one price</th>
+      <th>Exit two on</th>
+      <th>Exit two shares</th>
+      <th>Exit two price</th>
+      <th>Exit three on</th>
+      <th>Exit three shares</th>
+      <th>Exit three price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trade_logs.each do |trade_log| %>
+      <tr>
+        <td><%= trade_log.user %></td>
+        <td><%= trade_log.trade_opened_at %></td>
+        <td><%= trade_log.symbol %></td>
+        <td><%= trade_log.position_size %></td>
+        <td><%= trade_log.entry_price %></td>
+        <td><%= trade_log.stop %></td>
+        <td><%= trade_log.target %></td>
+        <td><%= trade_log.exit_one_on %></td>
+        <td><%= trade_log.exit_one_shares %></td>
+        <td><%= trade_log.exit_one_price %></td>
+        <td><%= trade_log.exit_two_on %></td>
+        <td><%= trade_log.exit_two_shares %></td>
+        <td><%= trade_log.exit_two_price %></td>
+        <td><%= trade_log.exit_three_on %></td>
+        <td><%= trade_log.exit_three_shares %></td>
+        <td><%= trade_log.exit_three_price %></td>
+        <td><%= link_to 'Show', trade_log %></td>
+        <td><%= link_to 'Edit', edit_trade_log_path(trade_log) %></td>
+        <td><%= link_to 'Destroy', trade_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trade log', new_trade_log_path %>

@@ -1,0 +1,81 @@
+<%= form_for(@trade_log) do |f| %>
+  <% if @trade_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trade_log.errors.count, "error") %> prohibited this trade_log from being saved:</h2>
+
+      <ul>
+      <% @trade_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :trade_opened_at %><br>
+    <%= f.datetime_select :trade_opened_at %>
+  </div>
+  <div class="field">
+    <%= f.label :symbol %><br>
+    <%= f.text_field :symbol %>
+  </div>
+  <div class="field">
+    <%= f.label :position_size %><br>
+    <%= f.number_field :position_size %>
+  </div>
+  <div class="field">
+    <%= f.label :entry_price %><br>
+    <%= f.text_field :entry_price %>
+  </div>
+  <div class="field">
+    <%= f.label :stop %><br>
+    <%= f.text_field :stop %>
+  </div>
+  <div class="field">
+    <%= f.label :target %><br>
+    <%= f.text_field :target %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_one_on %><br>
+    <%= f.datetime_select :exit_one_on %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_one_shares %><br>
+    <%= f.number_field :exit_one_shares %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_one_price %><br>
+    <%= f.text_field :exit_one_price %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_two_on %><br>
+    <%= f.datetime_select :exit_two_on %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_two_shares %><br>
+    <%= f.number_field :exit_two_shares %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_two_price %><br>
+    <%= f.text_field :exit_two_price %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_three_on %><br>
+    <%= f.datetime_select :exit_three_on %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_three_shares %><br>
+    <%= f.number_field :exit_three_shares %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_three_price %><br>
+    <%= f.text_field :exit_three_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
