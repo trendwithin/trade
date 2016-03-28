@@ -21,6 +21,7 @@ class BlogsController < ApplicationController
   def show
     count = @blog.click_count + 1
     @blog.update_attributes(click_count: count)
+    @comment = Comment.new
   end
 
   # GET /blogs/new

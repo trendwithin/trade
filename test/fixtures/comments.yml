@@ -1,0 +1,17 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+first_comment:
+  user: adming_user
+  blog: first_blog_post
+  body: I am responding to the first comment
+
+second_comment:
+  user: shane
+  blog: first_blog_post
+  body: I am commenting on the first blog.
+
+inappropriate_comment:
+  user: shane
+  blog: first_blog_post
+  body: This comment is inappropriate

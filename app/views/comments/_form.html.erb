@@ -1,0 +1,18 @@
+<h2>Add a comment:</h2>
+<%= form_for([@blog, @comment]) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id='error_explanation'>
+      <%= pluralize(@comment.errors.count, "error") %> prohibited this comment form being saved
+      <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :comment %><br>
+  <%= f.text_area :body, rows: '5', cols: '75' %>
+  <p>
+  <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,7 @@
+<div class="chirpbox" id="<%= dom_id(comment)%>">
+  <%= comment.body %>
+  <% if current_user.role == 'admin' %>
+    <button class="btn btn-sm btn-success"><%= link_to 'Edit', edit_comment_path(comment, blog_id: @blog) %></button><i class="fa fa-pencil-square-o"></i>
+    <button class="btn btn-sm btn-danger"><%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %></button> <i class="fa fa-times"></i>
+  <% end %>
+</div>
