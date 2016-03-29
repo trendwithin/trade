@@ -67,3 +67,12 @@ feature "Admin User Creates New Trade Log" do
     page.must_have_text 'Trade log was successfully created.'
   end
 end
+
+feature "UHP: Admin Fills Out Trade Log Form Incorrectly" do
+  scenario "Empty Form" do
+    logged_in_as users(:admin_user)
+    visit new_trade_log_path
+    click_button 'Create Trade log'
+    page.must_have_text '4 errors prohibited this blog from being saved:'
+  end
+end

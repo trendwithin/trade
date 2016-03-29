@@ -1,79 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @trade_log.user %>
-</p>
-
-<p>
-  <strong>Trade opened at:</strong>
-  <%= @trade_log.trade_opened_at %>
-</p>
-
-<p>
-  <strong>Symbol:</strong>
-  <%= @trade_log.symbol %>
-</p>
-
-<p>
-  <strong>Position size:</strong>
-  <%= @trade_log.position_size %>
-</p>
-
-<p>
-  <strong>Entry price:</strong>
-  <%= @trade_log.entry_price %>
-</p>
-
-<p>
-  <strong>Stop:</strong>
-  <%= @trade_log.stop %>
-</p>
-
-<p>
-  <strong>Exit one on:</strong>
-  <%= @trade_log.exit_one_on %>
-</p>
-
-<p>
-  <strong>Exit one shares:</strong>
-  <%= @trade_log.exit_one_shares %>
-</p>
-
-<p>
-  <strong>Exit one price:</strong>
-  <%= @trade_log.exit_one_price %>
-</p>
-
-<p>
-  <strong>Exit two on:</strong>
-  <%= @trade_log.exit_two_on %>
-</p>
-
-<p>
-  <strong>Exit two shares:</strong>
-  <%= @trade_log.exit_two_shares %>
-</p>
-
-<p>
-  <strong>Exit two price:</strong>
-  <%= @trade_log.exit_two_price %>
-</p>
-
-<p>
-  <strong>Exit three on:</strong>
-  <%= @trade_log.exit_three_on %>
-</p>
-
-<p>
-  <strong>Exit three shares:</strong>
-  <%= @trade_log.exit_three_shares %>
-</p>
-
-<p>
-  <strong>Exit three price:</strong>
-  <%= @trade_log.exit_three_price %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class='table table-reponsive table-bordered trade'>
+        <thead>
+          <tr>
+            <th>Entry Date</th>
+            <th>Symbol</th>
+            <th>Entry</th>
+            <th>Shares</th>
+            <th>Stop</th>
+            <th>Exit1</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Exit2</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Exit3</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>%Gain/Loss</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%= render @trade_log %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div><!-- Trade Tabel -->
 
 <%= link_to 'Edit', edit_trade_log_path(@trade_log) %> |
 <%= link_to 'Back', trade_logs_path %>

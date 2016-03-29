@@ -1,5 +1,16 @@
 <div class="container">
   <%= form_for(@trade_log) do |f| %>
+  <% if @trade_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trade_log.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @trade_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="row">
     <div class="col-md-6 well powder">
       <div class="form-horizontal">
