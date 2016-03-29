@@ -30,4 +30,5 @@
 </div><!-- Trade Tabel -->
 
 <%= link_to 'Edit', edit_trade_log_path(@trade_log) %> |
-<%= link_to 'Back', trade_logs_path %>
+<%= link_to 'Back', trade_logs_path %> |
+<%= link_to 'Delete', @trade_log, method: :delete, data: { confirm: 'Are you sure?' } %>

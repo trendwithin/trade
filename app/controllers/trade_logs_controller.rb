@@ -1,10 +1,13 @@
 class TradeLogsController < ApplicationController
   before_action :set_trade_log, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  after_action :verify_authorized
 
   # GET /trade_logs
   # GET /trade_logs.json
   def index
     @trade_logs = TradeLog.all
+    authorize @trade_logs
   end
 
   # GET /trade_logs/1
@@ -15,6 +18,7 @@ class TradeLogsController < ApplicationController
   # GET /trade_logs/new
   def new
     @trade_log = TradeLog.new
+    authorize @trade_log
   end
 
   # GET /trade_logs/1/edit
@@ -25,7 +29,7 @@ class TradeLogsController < ApplicationController
   # POST /trade_logs.json
   def create
     @trade_log = TradeLog.new(trade_log_params)
-
+    authorize @trade_log
     respond_to do |format|
       if @trade_log.save
         format.html { redirect_to @trade_log, notice: 'Trade log was successfully created.' }
@@ -42,6 +46,7 @@ class TradeLogsController < ApplicationController
   def update
     respond_to do |format|
       if @trade_log.update(trade_log_params)
+        authorize @trade_log
         format.html { redirect_to @trade_log, notice: 'Trade log was successfully updated.' }
         format.json { render :show, status: :ok, location: @trade_log }
       else
@@ -65,10 +70,11 @@ class TradeLogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_trade_log
       @trade_log = TradeLog.find(params[:id])
+      authorize @trade_log
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trade_log_params
-      params.require(:trade_log).permit(:user_id, :trade_opened_at, :symbol, :position_size, :entry_price, :stop, :target, :exit_one_on, :exit_one_shares, :exit_one_price, :exit_two_on, :exit_two_shares, :exit_two_price, :exit_three_on, :exit_three_shares, :exit_three_price)
+      params.require(:trade_log).permit(:user_id, :trade_opened_at, :symbol, :position_size, :entry_price, :stop, :exit_one_on, :exit_one_shares, :exit_one_price, :exit_two_on, :exit_two_shares, :exit_two_price, :exit_three_on, :exit_three_shares, :exit_three_price)
     end
 end

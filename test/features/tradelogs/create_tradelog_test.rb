@@ -4,7 +4,7 @@ feature "Admin User Creates New Trade Log" do
   scenario "Minimal Data for Valid Trade", :js => true do
     logged_in_as users(:admin_user)
     visit new_trade_log_path
-    page.execute_script("$('.datepicker').datepicker('setDate', '01/01/2010')")
+    page.execute_script("$('.datepicker').datepicker('setDate', '2010-01-01')")
     fill_in 'trade_log[symbol]', with: 'XYZ'
     fill_in 'trade_log[entry_price]', with: 20.23
     fill_in 'trade_log[position_size]', with: 100
@@ -16,12 +16,12 @@ feature "Admin User Creates New Trade Log" do
   scenario "Minimal Data and One Trade Exit", :js=> true do
     logged_in_as users(:admin_user)
     visit new_trade_log_path
-    page.execute_script("$('.datepicker').datepicker('setDate', '01/01/2020')")
+    page.execute_script("$('.datepicker').datepicker('setDate', '2020-01-01')")
     fill_in 'trade_log[symbol]', with: 'XYZ'
     fill_in 'trade_log[entry_price]', with: 20.23
     fill_in 'trade_log[position_size]', with: 100
     fill_in 'trade_log[stop]', with: 19
-    page.execute_script("$('#first_exit').datepicker('setDate', '01/02/2020')")
+    page.execute_script("$('#first_exit').datepicker('setDate', '2020-01-01')")
     fill_in 'trade_log[exit_one_shares]', with: 25
     fill_in 'trade_log[exit_one_price]', with: 21.00
     click_button 'Create Trade log'
@@ -31,15 +31,15 @@ feature "Admin User Creates New Trade Log" do
   scenario 'Entry, First Exit and Second Exit Completed Form', :js=> true do
     logged_in_as users(:admin_user)
     visit new_trade_log_path
-    page.execute_script("$('.datepicker').datepicker('setDate', '01/01/2020')")
+    page.execute_script("$('.datepicker').datepicker('setDate', '2020-01-01')")
     fill_in 'trade_log[symbol]', with: 'XYZ'
     fill_in 'trade_log[entry_price]', with: 20.23
     fill_in 'trade_log[position_size]', with: 100
     fill_in 'trade_log[stop]', with: 19
-    page.execute_script("$('#first_exit').datepicker('setDate', '01/02/2020')")
+    page.execute_script("$('#first_exit').datepicker('setDate', '2020-01-01')")
     fill_in 'trade_log[exit_one_shares]', with: 25
     fill_in 'trade_log[exit_one_price]', with: 21.00
-    page.execute_script("$('#second_exit').datepicker('setDate', '02/02/2020')")
+    page.execute_script("$('#second_exit').datepicker('setDate', '2020-02-02')")
     fill_in 'trade_log[exit_two_shares]', with: 25
     fill_in 'trade_log[exit_two_price]', with: 22.00
     click_button 'Create Trade log'
@@ -49,18 +49,18 @@ feature "Admin User Creates New Trade Log" do
   scenario 'Full Trade Log Form', :js=> true do
     logged_in_as users(:admin_user)
     visit new_trade_log_path
-    page.execute_script("$('.datepicker').datepicker('setDate', '01/01/2020')")
+    page.execute_script("$('.datepicker').datepicker('setDate', '2020-01-01')")
     fill_in 'trade_log[symbol]', with: 'XYZ'
     fill_in 'trade_log[entry_price]', with: 20.23
     fill_in 'trade_log[position_size]', with: 100
     fill_in 'trade_log[stop]', with: 19
-    page.execute_script("$('#first_exit').datepicker('setDate', '01/02/2020')")
+    page.execute_script("$('#first_exit').datepicker('setDate', '2020-01-01')")
     fill_in 'trade_log[exit_one_shares]', with: 25
     fill_in 'trade_log[exit_one_price]', with: 21.00
-    page.execute_script("$('#second_exit').datepicker('setDate', '02/02/2020')")
+    page.execute_script("$('#second_exit').datepicker('setDate', '2020-02-02')")
     fill_in 'trade_log[exit_two_shares]', with: 25
     fill_in 'trade_log[exit_two_price]', with: 22.00
-    page.execute_script("$('#thrid_exit').datepicker('setDate', '02/02/2020')")
+    page.execute_script("$('#thrid_exit').datepicker('setDate', '2020-02-02')")
     fill_in 'trade_log[exit_three_shares]', with: 25
     fill_in 'trade_log[exit_three_price]', with: 23.00
     click_button 'Create Trade log'

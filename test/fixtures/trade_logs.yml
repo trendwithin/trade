@@ -18,10 +18,10 @@ aapl:
   exit_three_shares: 50
   exit_three_price: 112
 
-two:
+xyz:
   user: admin_user
   trade_opened_at: 2016-03-28 16:41:33
-  symbol: MyString
+  symbol: XYZ
   position_size: 1
   entry_price: 1.5
   stop: 1.5
@@ -34,3 +34,10 @@ two:
   exit_three_on: 2016-03-28 16:41:33
   exit_three_shares: 1
   exit_three_price: 1.5
+
+minimal_trade:
+    trade_opened_at: 2016-03-28
+    symbol: ABC
+    position_size: 1
+    entry_price: 1.5
+    stop: 1.5
