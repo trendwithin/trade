@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20160328234133) do
     t.integer  "position_size",     null: false
     t.float    "entry_price",       null: false
     t.float    "stop"
-    t.float    "target"
     t.datetime "exit_one_on"
     t.integer  "exit_one_shares"
     t.float    "exit_one_price"

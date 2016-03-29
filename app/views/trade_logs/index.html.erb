@@ -1,57 +1,76 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Trade Logs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Trade opened at</th>
-      <th>Symbol</th>
-      <th>Position size</th>
-      <th>Entry price</th>
-      <th>Stop</th>
-      <th>Target</th>
-      <th>Exit one on</th>
-      <th>Exit one shares</th>
-      <th>Exit one price</th>
-      <th>Exit two on</th>
-      <th>Exit two shares</th>
-      <th>Exit two price</th>
-      <th>Exit three on</th>
-      <th>Exit three shares</th>
-      <th>Exit three price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @trade_logs.each do |trade_log| %>
-      <tr>
-        <td><%= trade_log.user %></td>
-        <td><%= trade_log.trade_opened_at %></td>
-        <td><%= trade_log.symbol %></td>
-        <td><%= trade_log.position_size %></td>
-        <td><%= trade_log.entry_price %></td>
-        <td><%= trade_log.stop %></td>
-        <td><%= trade_log.target %></td>
-        <td><%= trade_log.exit_one_on %></td>
-        <td><%= trade_log.exit_one_shares %></td>
-        <td><%= trade_log.exit_one_price %></td>
-        <td><%= trade_log.exit_two_on %></td>
-        <td><%= trade_log.exit_two_shares %></td>
-        <td><%= trade_log.exit_two_price %></td>
-        <td><%= trade_log.exit_three_on %></td>
-        <td><%= trade_log.exit_three_shares %></td>
-        <td><%= trade_log.exit_three_price %></td>
-        <td><%= link_to 'Show', trade_log %></td>
-        <td><%= link_to 'Edit', edit_trade_log_path(trade_log) %></td>
-        <td><%= link_to 'Destroy', trade_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Trade log', new_trade_log_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="well center">
+        Input Graph of YTD Trade % Based On 1% Portfolio Risk
+      </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class='table table-reponsive table-bordered trade'>
+        <thead>
+          <tr>
+            <th>Entry Date</th>
+            <th>Symbol</th>
+            <th>Entry</th>
+            <th>Shares</th>
+            <th>Stop</th>
+            <th>Exit1</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Exit2</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Exit3</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>%Gain/Loss</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%= render @trade_logs %>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div><!-- Trade Tabel -->
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12 center">
+      <h3>Recent Trade Alerts</h3>
+    </div>
+  </div>
+  <div class="row">
+    <sectin class="col-md-12">
+      <div id="alerts">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h3 class="panel-title">Genral Trade Alert</h3>
+          </div>
+          <div class="panel-body">
+          Moving Stop on XYZ to 18
+          </div>
+        </div>
+      </div>
+    </sectin>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+    <section class="col-md-12">
+      <div id="archive">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h3 class="panel-title">Trade Archives</h3>
+          </div>
+          <div class="panel-body">
+          <ul class="list-unstyled">
+            <li><a href="">2015</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
