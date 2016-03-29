@@ -15,6 +15,7 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'bower-rails'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'pundit', '~> 1.1'
+gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.0.1'
 
 group :development, :test do
   gem 'faker', '~> 1.6', '>= 1.6.3'
