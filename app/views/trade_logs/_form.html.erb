@@ -1,0 +1,122 @@
+<div class="container">
+  <%= form_for(@trade_log) do |f| %>
+  <% if @trade_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trade_log.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @trade_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-6 well powder">
+      <div class="form-horizontal">
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :date %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :trade_opened_at, class: 'datepicker' %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :symbol %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :symbol, id: "inputSuccess", class: "form-control", placeholder: "Input Position Symbol" %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :shares %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :position_size, id: "inputSuccess", class: "form-control", placeholder: "Input Position Shares" %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :entry %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :entry_price, id: "inputSuccess", class: "form-control", placeholder: "Input Position Entry Price" %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :stop %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :stop, id: "inputSuccess", class: "form-control", placeholder: "Input Position Stop" %>
+          </section>
+        </div>
+      </div>
+    </div><!-- First Quad -->
+    <div class="col-md-6 well powder"> <!-- Second Quad -->
+      <div class="form-horizontal">
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :exit_one %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_one_on, class: 'datepicker', id: 'first_exit' %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :shares %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_one_shares, id: "inputSuccess", class: "form-control", placeholder: "First Exit Shares" %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :price %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_one_price, id: "inputSuccess", class: "form-control", placeholder: "First Exit Price" %>
+          </section>
+        </div>
+      </div>
+    </div> <!-- End Second Quad -->
+  </div><!-- Row Ends -->
+  <div class="row">
+    <div class="col-md-6 well powder">
+      <div class="form-horizontal">
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :exit_two %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_two_on, class: 'datepicker', id: 'second_exit' %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :shares %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_two_shares, id: "inputSuccess", class: "form-control", placeholder: "Second Exit Shares" %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :price %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_two_price, id: "inputSuccess", class: "form-control", placeholder: "Second Exit Price" %>
+          </section>
+        </div>
+      </div>
+    </div><!-- 3rd Quad -->
+    <div class="col-md-6 well powder"> <!-- 4th Quad -->
+      <div class="form-horizontal">
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :exit_three%></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_three_on, class: 'datepicker', id: 'third_exit' %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :shares %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_three_shares, id: "inputSuccess", class: "form-control", placeholder: "Third Exit Shares" %>
+          </section>
+        </div>
+        <div class="form-group has-success">
+          <label for="inputSuccess" class="col-xs-2 control-label"> <%= f.label :price %></label>
+          <section class="col-xs-10">
+            <%= f.text_field :exit_three_price, id: "inputSuccess", class: "form-control", placeholder: "Third Exit Price" %>
+          </section>
+        </div>
+      </div>
+    </div><!-- End 4th Quad -->
+  </div> <!-- End Second Row -->
+  <div class="actions">
+  <%= f.submit %>
+  </div>
+  <% end %>
+</div>

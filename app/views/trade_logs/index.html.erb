@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="well center">
+        Input Graph of YTD Trade % Based On 1% Portfolio Risk
+      </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class='table table-reponsive table-bordered trade'>
+        <thead>
+          <tr>
+            <th>Entry Date</th>
+            <th>Symbol</th>
+            <th>Entry</th>
+            <th>Shares</th>
+            <th>Stop</th>
+            <th>Exit1</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Exit2</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Exit3</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>%Gain/Loss</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%= render @trade_logs %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div><!-- Trade Tabel -->
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12 center">
+      <h3>Recent Trade Alerts</h3>
+    </div>
+  </div>
+  <div class="row">
+    <sectin class="col-md-12">
+      <div id="alerts">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h3 class="panel-title">Genral Trade Alert</h3>
+          </div>
+          <div class="panel-body">
+          Moving Stop on XYZ to 18
+          </div>
+        </div>
+      </div>
+    </sectin>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+    <section class="col-md-12">
+      <div id="archive">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h3 class="panel-title">Trade Archives</h3>
+          </div>
+          <div class="panel-body">
+          <ul class="list-unstyled">
+            <li><a href="">2015</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

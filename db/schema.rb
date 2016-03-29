@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327220800) do
+ActiveRecord::Schema.define(version: 20160328234133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,28 @@ ActiveRecord::Schema.define(version: 20160327220800) do
 
   add_index "comments", ["blog_id"], name: "index_comments_on_blog_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "trade_logs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "trade_opened_at",   null: false
+    t.string   "symbol",            null: false
+    t.integer  "position_size",     null: false
+    t.float    "entry_price",       null: false
+    t.float    "stop"
+    t.datetime "exit_one_on"
+    t.integer  "exit_one_shares"
+    t.float    "exit_one_price"
+    t.datetime "exit_two_on"
+    t.integer  "exit_two_shares"
+    t.float    "exit_two_price"
+    t.datetime "exit_three_on"
+    t.integer  "exit_three_shares"
+    t.float    "exit_three_price"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "trade_logs", ["user_id"], name: "index_trade_logs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",           null: false
@@ -74,4 +96,5 @@ ActiveRecord::Schema.define(version: 20160327220800) do
 
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"
+  add_foreign_key "trade_logs", "users"
 end
