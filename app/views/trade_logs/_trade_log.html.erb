@@ -14,4 +14,10 @@
   <td><%= trade_log.exit_three_price %></td>
   <td><%= trade_log.exit_three_shares %></td>
   <td><%= weighted_avg(trade_log) %></td>
+  <% if current_user.admin? %>
+  <td class='white-text'>
+    <button type="button" class="btn btn-primary btn-xs"><%= link_to 'Edit', edit_trade_log_path(trade_log) %></button>
+    <button type="button" class="btn btn-danger btn-xs"><%= link_to 'Delete', trade_log, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  </td>
+  <% end %>
 </tr>

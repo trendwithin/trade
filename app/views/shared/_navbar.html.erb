@@ -9,7 +9,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Trading Twits</a>
+      <% if user_signed_in? %>
+        <%= link_to 'Trading Twits', static_pages_dummy_page_path, class: 'navbar-brand' %>
+      <% else %>
+        <a class="navbar-brand" href="#">Trading Twits</a>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,18 +21,17 @@
       <% if user_signed_in? && current_user.role == 'admin' %>
         <ul class="nav navbar-nav navbar-left">
           <li><%= link_to 'New Blog', new_blog_path %></li>
+          <li><%= link_to 'New Trade', new_trade_log_path %></li>
         </ul>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to 'Blog', blogs_path  %></li>
-        <% else %>
-          <li><%= link_to 'Blog', blogs_public_blog_path %></li>
-        <% end %>
-        <% if user_signed_in? %>
+          <li><%= link_to 'Trade log', trade_logs_path %></li>
           <li><%= link_to 'Profile', users_show_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
+          <li><%= link_to 'Blog', blogs_public_blog_path %></li>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <li><%= link_to 'Log in', new_user_session_path %></li>
         <% end %>

@@ -1,5 +1,7 @@
-<h1>New Trade Log</h1>
+<%= render 'shared/navbar' %>
+<h1 class="center">New Trade Log</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', trade_logs_path %>
+<div class="col-md-6 col-md-offset-1 pad_top_10">
+  <%= link_to 'Back', trade_logs_path, class: 'btn btn-sm btn-primary' %>
+</div>
