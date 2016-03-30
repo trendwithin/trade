@@ -41,3 +41,71 @@ minimal_trade:
     position_size: 1
     entry_price: 1.5
     stop: 1.5
+
+fake:
+  user: admin_user
+  trade_opened_at: 2016-12-17 15:57:29
+  symbol: FAKE
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  exit_one_on: 2016-12-17 15:57:29
+  exit_one_shares: 100
+  exit_one_price: 11
+  exit_two_on: 2016-12-17 15:57:29
+  exit_two_shares:
+  exit_two_price:
+  exit_three_on: 2016-12-17 15:57:29
+  exit_three_shares:
+  exit_three_price:
+
+junk:
+  user: admin_user
+  trade_opened_at: 2016-12-17 15:57:29
+  symbol: JUNK
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  exit_one_on: 2016-12-17 15:57:29
+  exit_one_shares: 50
+  exit_one_price: 11
+  exit_two_on: 2016-12-17 15:57:29
+  exit_two_shares: 25
+  exit_two_price: 12
+  exit_three_on: 2016-12-17 15:57:29
+  exit_three_shares: 25
+  exit_three_price: 15
+
+loss:
+  user: admin_user
+  trade_opened_at: 2016-12-17 15:57:29
+  symbol: LOSS
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  exit_one_on: 2016-12-17 15:57:29
+  exit_one_shares: 100
+  exit_one_price: 9
+  exit_two_on: 2016-12-17 15:57:29
+  exit_two_shares:
+  exit_two_price:
+  exit_three_on: 2016-12-17 15:57:29
+  exit_three_shares:
+  exit_three_price:
+
+mix:
+  user: admin_user
+  trade_opened_at: 2016-12-17 15:57:29
+  symbol: MIX
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  exit_one_on: 2016-12-17 15:57:29
+  exit_one_shares: 50
+  exit_one_price: 11
+  exit_two_on: 2016-12-17 15:57:29
+  exit_two_shares: 50
+  exit_two_price: 9
+  exit_three_on: 2016-12-17 15:57:29
+  exit_three_shares:
+  exit_three_price:
