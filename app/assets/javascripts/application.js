@@ -16,6 +16,7 @@
 //= require bootstrap-sass-official
 //= require bootstrap-datepicker
 //= require_tree .
-$(document).ready( function(){
+  
+$(document).on('page:change', function(){
   $('.datepicker').datepicker( { format: 'yyyy-mm-dd' });
 });
