@@ -18,6 +18,14 @@ feature "Admin Link Test" do
     click_link 'Blog'
     page.must_have_text blogs(:first_blog_post).body
 
+    page.must_have_text 'Trade log'
+    click_link 'Trade log'
+    page.must_have_text trade_logs(:minimal_trade).symbol
+
+    page.must_have_text 'New Trade'
+    click_link 'New Trade'
+    page.current_path == new_trade_log_path
+
     page.must_have_link 'Log out'
     click_link 'Log out'
     page.must_have_text 'Signed out successfully.'
@@ -39,5 +47,6 @@ feature 'Registered User Link Test' do
     page.must_have_link 'Log out'
     page.must_have_link 'Profile'
     page.wont_have_link 'New Blog'
+    page.wont_have_link 'New Trade'
   end
 end
