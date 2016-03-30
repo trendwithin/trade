@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -19,16 +20,16 @@
             <th>Price</th>
             <th>Shares</th>
             <th>%Gain/Loss</th>
+            <% if current_user.admin? %>
+              <th>Action</th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
         <%= render @trade_log %>
       </tbody>
     </table>
+    <span class='pull-right'> <button class="btn btn-primary btn-sm white-text"> <%= link_to 'Back', trade_logs_path %> </button> </span>
   </div>
 </div>
-</div><!-- Trade Tabel -->
-
-<%= link_to 'Edit', edit_trade_log_path(@trade_log) %> |
-<%= link_to 'Back', trade_logs_path %> |
-<%= link_to 'Delete', @trade_log, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div><!-- Trade Table -->
