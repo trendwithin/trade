@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'chirps/timeline'
+
   resources :trade_logs
   resources :blogs do
     resources :comments

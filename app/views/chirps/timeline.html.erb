@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-1">
+    <h4>Timeline</h4>
+    <form action="">
+      Chirp Box
+      <input type="text" name='chirp'>
+    </form>
+  </div>
+</div>
+<!-- Timeline -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="chirps">
+        <section class="chirpbox">
+          <span class="tip tip-left"></span>
+          <ul class="list-inline">
+            <li>posted by: <a href="">Name</a></li>
+            <li>on: Date</li>
+            <li>Upvote: 3</li>
+          </ul>
+          <hr>
+          some text
+        </section>
+        <section class="chirpbox">
+          <span class="tip tip-left"></span>
+          <ul class="list-inline">
+            <li>posted by: <a href="">Name</a></li>
+            <li>on: Date</li>
+            <li>Upvote: 3</li>
+          </ul>
+          <hr>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga veritatis tenetur enim neque dolorum animi, id voluptatem quibusdam placeat, fugit veniam. Explicabo quia qui laborum pariatur quod cupiditate obcaecati asperiores!</p>
+        </section>
+        <%= render @chirps %>
+      </div>
+    </div>
+    <!-- Alerts -->
+    <aside class="col-md-3 col-md-offset-1">
+      <div id="trade-count">
+        <h4 class='well'>0 Trade Alerts Today</h4>
+      </div>
+      <section id="all-alerts">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="panel-title">
+            Trade Alerts
+            </div>
+          </div>
+            <div class="panel-body">
+              <ul class='list-unstyled'>
+              <li>Symbol</li>
+              <li>Entry</li>
+              <li>Stop</li>
+
+              </ul>
+            </div>
+        </div>
+      </section>
+      <div class="popular">
+        <h3>Popular Twits:</h3>
+        <ul class='list-unstyled'>
+          <li>#4 12-23-2015</li>
+          <li>#1 12-24-2011</li>
+          <li>#104 12-23-2013</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>

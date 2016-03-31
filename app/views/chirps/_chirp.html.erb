@@ -1,0 +1,12 @@
+<section class="chirpbox">
+  <span class="tip tip-left"></span>
+  <article class="powder chirp-header">
+    <ul class="list-inline">
+      <li><img src="" alt="Gravatar"></li>
+      <li>posted by: <a href="">Name</a><%#= link_to "#{chirp.user.username}", users_show_path(chirp.user) %></li>
+      <li><%= chirp.created_at %></li>
+      <li>Upvote: 3</li>
+    </ul>
+  </article>
+  <%= chirp.content %>
+</section>
