@@ -14,6 +14,12 @@ class ChirpsController < ApplicationController
     end
   end
 
+  def destroy
+    @chirp = Chirp.find([:id])
+    @chirp.delete
+    redirect_to timeline_chirps_path, notice: 'Comment was successfully deleted.'
+  end
+
   def timeline
     @chirp = Chirp.new
     @chirps = Chirp.desc

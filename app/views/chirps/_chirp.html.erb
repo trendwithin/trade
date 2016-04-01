@@ -1,7 +1,7 @@
 <section class="chirpbox">
   <span class="tip tip-left"></span>
   <article class="powder chirp-header">
-    <ul class="list-inline">
+    <ul class="list-inline" id="<%= dom_id(chirp) %>">
       <li><img src="" alt="Gravatar"></li>
       <li>posted by: <%= link_to to_name(chirp.user), users_show_path(chirp) %></li>
       <li><%= chirp.created_at %></li>
