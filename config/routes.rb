@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'chirps/timeline'
-  resources :chirps do
+  get 'chirps/timeline', path: '/timeline'
+  resources :chirps, shallow: true do
     collection do
-      get :timeline, path: '/timeline'
+      get :timeline # path: '/timeline'
     end
   end
   resources :trade_logs
