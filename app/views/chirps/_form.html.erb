@@ -1,0 +1,7 @@
+<%= form_for(@chirp) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, cols: '70', rows: '3', placeholder: "What's new?" %>
+  </div>
+  <%= f.submit %>
+<% end %>

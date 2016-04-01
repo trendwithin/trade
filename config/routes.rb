@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get 'chirps/timeline'
-
+  resources :chirps do
+    collection do
+      get :timeline, path: '/timeline'
+    end
+  end
   resources :trade_logs
   resources :blogs do
     resources :comments

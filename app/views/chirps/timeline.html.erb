@@ -2,10 +2,8 @@
 <div class="container">
   <div class="col-md-8 col-md-offset-1">
     <h4>Timeline</h4>
-    <form action="">
-      Chirp Box
-      <input type="text" name='chirp'>
-    </form>
+    <img src="" alt="Gravatar" />
+    <%= render 'form' %>
   </div>
 </div>
 <!-- Timeline -->
@@ -13,7 +11,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="chirps">
-        <%= render @chirps %>
+        <%= render @chirps unless @chirps.nil? %>
       </div>
     </div>
     <!-- Alerts -->

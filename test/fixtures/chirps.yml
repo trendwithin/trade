@@ -4,11 +4,14 @@
 chirp:
   content: Rockin Robin rock, rock
   created_at: <%= 1.day.ago %>
+  user: admin_user
 
 chirptwo:
   content: Love to hear the robin go tweet tweet tweet
   created_at: <%= Time.zone.now %>
+  user: shane
 
 chirpthree:
   content: He out-bopped the buzzard and the oriole
   created_at: <%= 2.days.ago %>
+  user: shane
