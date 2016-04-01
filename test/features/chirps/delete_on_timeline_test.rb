@@ -11,7 +11,6 @@ feature "Deletion of Chirps From TimeLine" do
     within("#chirp_#{id}") do
       click_link 'Delete'
     end
-    save_and_open_page
     page.wont_have_text 'This is offensive'
     page.must_have_text 'Comment was successfully deleted.'
   end
