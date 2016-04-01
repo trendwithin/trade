@@ -21,3 +21,10 @@ end
 
 TradeLog.create!(user_id: admin.id, trade_opened_at: times4, symbol: 'XYZ', position_size: 100, entry_price: 10, stop: 9, exit_one_on: time, exit_one_shares: 100, exit_one_price: 15)
 TradeLog.create!(user_id: admin.id, trade_opened_at: times4, symbol: 'ABC', position_size: 100, entry_price: 10, stop: 9, exit_one_on: times3, exit_one_shares: 25, exit_one_price: 11, exit_two_on: times2, exit_two_shares: 25, exit_two_price: 12, exit_three_on: time, exit_three_shares: 25, exit_three_price: 15)
+
+# chirps
+
+10.times do
+  content = Faker::Hipster.paragraph(1)
+  admin.chirps.create!(content: content)
+end

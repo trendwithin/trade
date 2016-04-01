@@ -148,6 +148,22 @@
   border: 2px solid #ccc;
 }
 
+.tip {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  background: transparent;
+  border: 10px solid blue;
+}
+
+.tip-left {
+  top: 10px;
+  left: -25px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
 /* Trades Log */
 .trade th {
   color: #000;

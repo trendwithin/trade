@@ -1,0 +1,49 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="col-md-8 col-md-offset-1">
+    <h4>Timeline</h4>
+    <img src="" alt="Gravatar" />
+    <%= render 'form' %>
+  </div>
+</div>
+<!-- Timeline -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="chirps">
+        <%= render @chirps unless @chirps.nil? %>
+      </div>
+    </div>
+    <!-- Alerts -->
+    <aside class="col-md-3 col-md-offset-1">
+      <div id="trade-count">
+        <h4 class='well'>0 Trade Alerts Today</h4>
+      </div>
+      <section id="all-alerts">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="panel-title">
+            Trade Alerts
+            </div>
+          </div>
+            <div class="panel-body">
+              <ul class='list-unstyled'>
+              <li>Symbol</li>
+              <li>Entry</li>
+              <li>Stop</li>
+
+              </ul>
+            </div>
+        </div>
+      </section>
+      <div class="popular">
+        <h3>Popular Twits:</h3>
+        <ul class='list-unstyled'>
+          <li>#4 12-23-2015</li>
+          <li>#1 12-24-2011</li>
+          <li>#104 12-23-2013</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>

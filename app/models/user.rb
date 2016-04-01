@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   has_many :blogs
   has_many :comments
   has_many :trade_logs
-    
+  has_many :chirps
+      
   # Devise Login Username or Email
   def self.find_for_database_authentication(warden_conditions)
      conditions = warden_conditions.dup
