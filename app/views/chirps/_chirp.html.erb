@@ -3,7 +3,7 @@
   <article class="powder chirp-header">
     <ul class="list-inline">
       <li><img src="" alt="Gravatar"></li>
-      <li>posted by: <a href="">Name</a><%#= link_to "#{chirp.user.username}", users_show_path(chirp.user) %></li>
+      <li>posted by: <%= link_to to_name(chirp.user), users_show_path(chirp) %></li>
       <li><%= chirp.created_at %></li>
       <li>Upvote: 3</li>
     </ul>

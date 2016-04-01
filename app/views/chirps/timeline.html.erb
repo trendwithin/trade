@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="container">
   <div class="col-md-8 col-md-offset-1">
     <h4>Timeline</h4>
@@ -12,26 +13,6 @@
   <div class="row">
     <div class="col-md-8">
       <div class="chirps">
-        <section class="chirpbox">
-          <span class="tip tip-left"></span>
-          <ul class="list-inline">
-            <li>posted by: <a href="">Name</a></li>
-            <li>on: Date</li>
-            <li>Upvote: 3</li>
-          </ul>
-          <hr>
-          some text
-        </section>
-        <section class="chirpbox">
-          <span class="tip tip-left"></span>
-          <ul class="list-inline">
-            <li>posted by: <a href="">Name</a></li>
-            <li>on: Date</li>
-            <li>Upvote: 3</li>
-          </ul>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga veritatis tenetur enim neque dolorum animi, id voluptatem quibusdam placeat, fugit veniam. Explicabo quia qui laborum pariatur quod cupiditate obcaecati asperiores!</p>
-        </section>
         <%= render @chirps %>
       </div>
     </div>
