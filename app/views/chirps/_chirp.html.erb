@@ -3,7 +3,7 @@
   <article class="powder chirp-header">
     <ul class="list-inline" id="<%= dom_id(chirp) %>">
       <li><img src="" alt="Gravatar"></li>
-      <li>posted by: <%= link_to to_name(chirp.user), users_show_path(chirp) %></li>
+      <li>posted by: <%= link_to to_name(chirp.user), profile_path(chirp.user.id) %></li>
       <li><%= chirp.created_at %></li>
       <li>Upvote: 3</li>
       <% if current_user.admin? %>
