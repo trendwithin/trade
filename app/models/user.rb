@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :trade_logs
   has_many :chirps
-      
+  has_many :likes
+
   # Devise Login Username or Email
   def self.find_for_database_authentication(warden_conditions)
      conditions = warden_conditions.dup
@@ -28,6 +29,10 @@ class User < ActiveRecord::Base
      elsif conditions.has_key?(:username) || conditions.has_key?(:email)
        where(conditions.to_hash).first
      end
+  end
+
+  def likes?(chirp)
+    chirp.likes.where(user_id: id).any?
   end
 
   def admin?
