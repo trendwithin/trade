@@ -26,6 +26,10 @@ feature "Admin Link Test" do
     click_link 'New Trade'
     page.current_path == new_trade_log_path
 
+    page.must_have_text 'Timeline'
+    click_link 'Timeline'
+    page.current_path == chirps_timeline_path
+
     page.must_have_link 'Log out'
     click_link 'Log out'
     page.must_have_text 'Signed out successfully.'

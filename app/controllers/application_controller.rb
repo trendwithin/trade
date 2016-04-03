@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def after_sign_in_path_for(resource)
-      static_pages_dummy_page_path
+      chirps_timeline_path
     end
 
     def configure_parameter_sanitizer

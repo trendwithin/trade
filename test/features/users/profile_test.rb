@@ -22,7 +22,7 @@ feature "User Profile Page" do
     fill_in 'user_current_password', with: 'password'
     click_button 'Update'
     page.must_have_text 'Your account has been updated successfully.'
-    visit users_show_path
+    visit users_my_profile_path
     page.must_have_text 'Added Username'
   end
 
@@ -32,8 +32,9 @@ feature "User Profile Page" do
     fill_in 'user_bio', with: 'I am adding a new bio'
     fill_in 'user_current_password', with: 'password'
     click_button 'Update'
+
     page.must_have_text 'Your account has been updated successfully.'
-    visit users_show_path
+    visit users_my_profile_path
     page.must_have_text 'I am adding a new bio'
   end
 
@@ -47,7 +48,7 @@ feature "User Profile Page" do
     fill_in 'user_current_password', with: 'password'
     click_button 'Update'
     page.must_have_text 'Your account has been updated successfully.'
-    visit users_show_path
+    visit users_my_profile_path
     page.must_have_text 'Vic'
     page.must_have_text 'Mackey'
     page.must_have_text 'South Central'

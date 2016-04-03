@@ -14,7 +14,7 @@ feature "User Sign In" do
     fill_in 'Password', with: 'password'
     click_button 'Log in'
     page.must_have_text 'Signed in successfully.'
-    page.must_have_text 'This is a dummy page to test against.'
+    page.current_path == chirps_timeline_path
   end
 
   scenario 'Valid User Enters Empty Form' do

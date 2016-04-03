@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   end
   resources :comments, only: [:edit, :show, :destroy]
   get 'blogs/public_blog', path: '/blog'
-  get 'users/show', path: '/profile'
+  get 'users/my_profile', path: '/my_profile'
+  get 'users/profile/:id', to: 'users#show', as: '/profile'
 
   devise_for :users
   root 'static_pages#home'
