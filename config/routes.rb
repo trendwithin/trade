@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     collection do
       get :timeline # path: '/timeline'
     end
+    resource :like, module: :chirps
   end
+  
   resources :trade_logs
   resources :blogs do
     resources :comments

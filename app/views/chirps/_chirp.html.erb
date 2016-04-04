@@ -2,12 +2,17 @@
   <span class="tip tip-left"></span>
   <article class="powder chirp-header">
     <ul class="list-inline" id="<%= dom_id(chirp) %>">
-      <li><img src="" alt="Gravatar"></li>
+      <li> <%= gravatar_for chirp.user %></li>
       <li>posted by: <%= link_to to_name(chirp.user), profile_path(chirp.user.id) %></li>
       <li><%= chirp.created_at %></li>
-      <li>Upvote: 3</li>
+      <% if user_signed_in? && current_user.likes?(chirp) %>
+        <li>Upvote: <%= chirp.likes.count %></li>
+      <% else %>
+        <li><span id="likes"><%=  link_to 'Upvote', chirp_like_path(chirp), method: :post %>: <%= chirp.likes.count %></span></li>
+      <% end %>
       <% if current_user.admin? %>
-        <li class="pull-right"><%= link_to 'Delete', chirp, method: :delete, data: { confirm: "Are you sure?" } %></li>
+        <li class="pull-right">
+        <%= link_to 'Delete', chirp, method: :delete, data: { confirm: "Are you sure?" } %></li>
         <li class="pull-right"><%= link_to 'Edit', edit_chirp_path(chirp) %></li>
       <% end %>
     </ul>
