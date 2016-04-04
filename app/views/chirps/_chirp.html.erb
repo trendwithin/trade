@@ -2,7 +2,7 @@
   <span class="tip tip-left"></span>
   <article class="powder chirp-header">
     <ul class="list-inline" id="<%= dom_id(chirp) %>">
-      <li><img src="" alt="Gravatar"></li>
+      <li> <%= gravatar_for chirp.user %></li>
       <li>posted by: <%= link_to to_name(chirp.user), profile_path(chirp.user.id) %></li>
       <li><%= chirp.created_at %></li>
       <% if user_signed_in? && current_user.likes?(chirp) %>
