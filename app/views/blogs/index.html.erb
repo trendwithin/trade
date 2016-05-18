@@ -24,7 +24,11 @@
 
           <li><a href="">Tags: Momentum, Entry</a></li>
           <li><a href="">Comments: 2</a></li>
-          <li><a href="">Upvotes</a></li>
+          <% if user_signed_in? && current_user.votes?(blog) %>
+            Upvote: <%= blog.votes.count  %>
+          <% else %>
+            <%= link_to 'Upvote:', blog_vote_path(blog), method: :post, class: 'vote' %> <%= blog.votes.count %>
+          <% end %>
         </ul>
       <% end %>
     </div> <!-- End Blog -->

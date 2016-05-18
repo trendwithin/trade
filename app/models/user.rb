@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     chirp.likes.where(user_id: id).any?
   end
 
+  def votes?(obj)
+    return obj.votes.where(user_id: id).any? if obj.is_a?(Blog)
+  end
+
   def admin?
     role == 'admin'
   end

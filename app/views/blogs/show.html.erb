@@ -5,6 +5,8 @@
       <span class="center"><h3><%= @blog.title %></span></h3>
       <hr>
       <%= @blog.body %>
+      <br>
+      <span id='#upvote'><%= link_to 'Upvote:', blog_vote_path(@blog), method: :post %></span>
     </div>
   </div>
 </div>

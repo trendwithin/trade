@@ -6,11 +6,13 @@ Rails.application.routes.draw do
     end
     resource :like, module: :chirps
   end
-  
+
   resources :trade_logs
   resources :blogs do
     resources :comments
+    resource :vote
   end
+  # resource :vote
   resources :comments, only: [:edit, :show, :destroy]
   get 'blogs/public_blog', path: '/blog'
   get 'users/my_profile', path: '/my_profile'
